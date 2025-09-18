@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Essential SEO Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary SEO Tags -->
+    <title>Big Timer - Beautiful Pomodoro Timer & Stopwatch for Productivity</title>
+    <meta name="description" content="Elegant online timer and stopwatch app. Perfect for Pomodoro technique, study sessions, workouts, and productivity. Free with premium features available.">
+    <meta name="keywords" content="timer, stopwatch, pomodoro, productivity, focus, study timer, workout timer, online timer, web timer">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bigtimer.app/">
+    <meta property="og:title" content="Big Timer - Beautiful Pomodoro Timer & Stopwatch">
+    <meta property="og:description" content="Elegant online timer and stopwatch app for productivity and focus sessions.">
+    <meta property="og:image" content="https://bigtimer.app/assets/social-preview.png">
+    <meta property="og:site_name" content="Big Timer">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://bigtimer.app/">
+    <meta property="twitter:title" content="Big Timer - Beautiful Pomodoro Timer & Stopwatch">
+    <meta property="twitter:description" content="Elegant online timer and stopwatch app for productivity and focus sessions.">
+    <meta property="twitter:image" content="https://bigtimer.app/assets/social-preview.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icon.ico">
+    <link rel="apple-touch-icon" href="assets/icon.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ff6b6b">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://bigtimer.app/">
+    
+    <!-- Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Big Timer",
+        "description": "Elegant online timer and stopwatch app for productivity and focus sessions",
+        "url": "https://bigtimer.app",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Big Timer"
+        },
+        "screenshot": "https://bigtimer.app/assets/app-screenshot.png",
+        "featureList": [
+            "Pomodoro Timer",
+            "Stopwatch",
+            "Custom Themes",
+            "Statistics Tracking",
+            "Offline Support"
+        ]
+    }
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- Your existing CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Add breadcrumb navigation for SEO -->
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+        <ol>
+            <li><a href="/">Home</a></li>
+            <li aria-current="page">Timer</li>
+        </ol>
+    </nav>
+
+    <!-- Your existing app content -->
+    <div class="app-container">
+        <div class="main-container">
+            <!-- Add semantic HTML for better SEO -->
+            <header class="header">
+                <h1 class="visually-hidden">Big Timer - Online Pomodoro Timer and Stopwatch</h1>
+                <div class="mode-switcher">
+                    <button class="mode-btn active" data-mode="timer" aria-label="Switch to Timer mode">Timer</button>
+                    <button class="mode-btn" data-mode="stopwatch" aria-label="Switch to Stopwatch mode">Stopwatch</button>
+                </div>
+            </header>
+
+            <!-- Timer Mode -->
+            <main class="timer-container active" id="timer-mode">
+                <section class="time-display-container" aria-label="Timer display">
+                    <div class="time-display" id="timer-display" aria-live="polite">00:05:00</div>
+                    <div class="time-label">Timer</div>
+                </section>
+                
+                <section class="time-setter" aria-label="Set timer duration">
+                    <div class="time-input-group">
+                        <div class="time-input">
+                            <label for="hours">Hours</label>
+                            <input type="number" id="hours" min="0" max="23" value="0" aria-label="Hours">
+                        </div>
+                        <div class="time-input">
+                            <label for="minutes">Minutes</label>
+                            <input type="number" id="minutes" min="0" max="59" value="5" aria-label="Minutes">
+                        </div>
+                        <div class="time-input">
+                            <label for="seconds">Seconds</label>
+                            <input type="number" id="seconds" min="0" max="59" value="0" aria-label="Seconds">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="controls" aria-label="Timer controls">
+                    <button class="control-btn start-btn" id="timer-start" aria-label="Start timer">
+                        <i class="fas fa-play" aria-hidden="true"></i>
+                        Start
+                    </button>
+                    <button class="control-btn pause-btn" id="timer-pause" style="display: none;" aria-label="Pause timer">
+                        <i class="fas fa-pause" aria-hidden="true"></i>
+                        Pause
+                    </button>
+                    <button class="control-btn reset-btn" id="timer-reset" aria-label="Reset timer">
+                        <i class="fas fa-redo" aria-hidden="true"></i>
+                        Reset
+                    </button>
+                </section>
+            </main>
+
+            <!-- Stopwatch Mode -->
+            <main class="timer-container" id="stopwatch-mode">
+                <section class="time-display-container" aria-label="Stopwatch display">
+                    <div class="time-display" id="stopwatch-display" aria-live="polite">00:00:00</div>
+                    <div class="time-label">Stopwatch</div>
+                </section>
+
+                <section class="controls" aria-label="Stopwatch controls">
+                    <button class="control-btn start-btn" id="stopwatch-start" aria-label="Start stopwatch">
+                        <i class="fas fa-play" aria-hidden="true"></i>
+                        Start
+                    </button>
+                    <button class="control-btn pause-btn" id="stopwatch-pause" style="display: none;" aria-label="Pause stopwatch">
+                        <i class="fas fa-pause" aria-hidden="true"></i>
+                        Pause
+                    </button>
+                    <button class="control-btn lap-btn" id="stopwatch-lap" style="display: none;" aria-label="Record lap time">
+                        <i class="fas fa-flag" aria-hidden="true"></i>
+                        Lap
+                    </button>
+                    <button class="control-btn reset-btn" id="stopwatch-reset" aria-label="Reset stopwatch">
+                        <i class="fas fa-redo" aria-hidden="true"></i>
+                        Reset
+                    </button>
+                </section>
+
+                <aside class="laps-container" id="laps-container" aria-label="Lap times">
+                    <div class="laps-list" id="laps-list" role="log" aria-live="polite"></div>
+                </aside>
+            </main>
+
+            <!-- Notification -->
+            <div class="notification" id="notification" role="alert" aria-live="assertive">
+                <i class="fas fa-bell" aria-hidden="true"></i>
+                <span>Timer finished!</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer for SEO -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Big Timer. The best online timer and stopwatch for productivity.</p>
+            <nav class="footer-nav">
+                <a href="#about">About</a>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- Your existing JavaScript -->
+    <script src="script.js"></script>
+    <script src="frontend-monetization.js"></script>
+</body>
+</html>

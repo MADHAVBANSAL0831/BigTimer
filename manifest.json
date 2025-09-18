@@ -1,0 +1,71 @@
+{
+  "name": "Big Timer - Pomodoro Timer & Stopwatch",
+  "short_name": "Big Timer",
+  "description": "Elegant timer and stopwatch app for productivity and focus sessions",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#303030",
+  "theme_color": "#ff6b6b",
+  "orientation": "portrait-primary",
+  "categories": ["productivity", "utilities"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "assets/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icon-256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "assets/screenshot-narrow.png",
+      "sizes": "640x1136",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Start Timer",
+      "short_name": "Timer",
+      "description": "Start a productivity timer",
+      "url": "/?mode=timer",
+      "icons": [
+        {
+          "src": "assets/icon.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Start Stopwatch",
+      "short_name": "Stopwatch",
+      "description": "Start the stopwatch",
+      "url": "/?mode=stopwatch",
+      "icons": [
+        {
+          "src": "assets/icon.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

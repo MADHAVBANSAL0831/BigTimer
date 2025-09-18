@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient -->
+    <radialGradient id="bgGradient" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#404040;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2a2a2a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Timer circle gradient -->
+    <linearGradient id="timerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff4757;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Inner circle gradient -->
+    <radialGradient id="innerGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#333333;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Glow effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#bgGradient)" stroke="#555555" stroke-width="4"/>
+  
+  <!-- Outer timer ring -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="url(#timerGradient)" stroke-width="12" stroke-linecap="round" 
+          stroke-dasharray="1256" stroke-dashoffset="314" filter="url(#glow)"/>
+  
+  <!-- Inner circle -->
+  <circle cx="256" cy="256" r="160" fill="url(#innerGradient)" stroke="#444444" stroke-width="2"/>
+  
+  <!-- Clock hands -->
+  <!-- Hour hand -->
+  <line x1="256" y1="256" x2="256" y2="180" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+  
+  <!-- Minute hand -->
+  <line x1="256" y1="256" x2="320" y2="256" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+  
+  <!-- Center dot -->
+  <circle cx="256" cy="256" r="12" fill="#ff6b6b" stroke="#ffffff" stroke-width="2"/>
+  
+  <!-- Time markers -->
+  <g stroke="#ffffff" stroke-width="3" opacity="0.6">
+    <!-- 12 o'clock -->
+    <line x1="256" y1="100" x2="256" y2="120"/>
+    <!-- 3 o'clock -->
+    <line x1="412" y1="256" x2="392" y2="256"/>
+    <!-- 6 o'clock -->
+    <line x1="256" y1="412" x2="256" y2="392"/>
+    <!-- 9 o'clock -->
+    <line x1="100" y1="256" x2="120" y2="256"/>
+  </g>
+  
+  <!-- Smaller time markers -->
+  <g stroke="#ffffff" stroke-width="2" opacity="0.4">
+    <!-- 1 o'clock -->
+    <line x1="334" y1="122" x2="326" y2="130"/>
+    <!-- 2 o'clock -->
+    <line x1="390" y1="178" x2="382" y2="186"/>
+    <!-- 4 o'clock -->
+    <line x1="390" y1="334" x2="382" y2="326"/>
+    <!-- 5 o'clock -->
+    <line x1="334" y1="390" x2="326" y2="382"/>
+    <!-- 7 o'clock -->
+    <line x1="178" y1="390" x2="186" y2="382"/>
+    <!-- 8 o'clock -->
+    <line x1="122" y1="334" x2="130" y2="326"/>
+    <!-- 10 o'clock -->
+    <line x1="122" y1="178" x2="130" y2="186"/>
+    <!-- 11 o'clock -->
+    <line x1="178" y1="122" x2="186" y2="130"/>
+  </g>
+</svg>
