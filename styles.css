@@ -20,14 +20,14 @@ body {
 
 .app-container {
     background: #303030;
-    padding: 0.5rem;
-    width: 100%;
+    padding: 1rem;
+    width: 100vw;
     min-height: 100vh;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     box-sizing: border-box;
     overflow-x: hidden;
 }
@@ -37,14 +37,13 @@ body {
     border: 2px solid #404040;
     border-radius: 24px;
     padding: 2rem;
-    width: 90%;
-    max-width: 500px;
-    min-height: 400px;
+    width: 100%;
+    max-width: 450px;
     position: relative;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
     box-sizing: border-box;
-    margin: 1rem 0;
+    margin: 0;
 }
 
 @keyframes slideIn {
@@ -585,7 +584,7 @@ body {
     margin: 1rem 0;
     text-align: center;
     min-height: 90px;
-    display: flex;
+    display: none; /* Temporarily hidden for layout fix */
     align-items: center;
     justify-content: center;
 }
@@ -604,10 +603,12 @@ body {
     background: rgba(26, 26, 26, 0.95);
     color: white;
     padding: 1.5rem 0;
-    margin-top: 2rem;
+    margin-top: auto;
     text-align: center;
     width: 100%;
     box-sizing: border-box;
+    flex-shrink: 0;
+    display: none; /* Temporarily hidden for layout fix */
 }
 
 .footer-content {
