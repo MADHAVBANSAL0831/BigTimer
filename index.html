@@ -4,12 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Big Timer - Elegant Timer & Stopwatch</title>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525419879881614"
+            crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="app-container">
+        <!-- Top Banner Ad -->
+        <div class="ad-container top-ad" id="top-ad">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4525419879881614"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
         <div class="main-container">
             <!-- Header -->
             <header class="header">
@@ -91,6 +106,16 @@
             </div>
         </div>
 
+        <!-- Bottom Banner Ad -->
+        <div class="ad-container bottom-ad" id="bottom-ad">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4525419879881614"
+                 data-ad-slot="9876543210"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
             <!-- Notification -->
             <div class="notification" id="notification">
                 <i class="fas fa-bell"></i>
@@ -99,6 +124,28 @@
         </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Big Timer. The best online timer and stopwatch for productivity.</p>
+            <nav class="footer-nav">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
+
+    <!-- AdSense Initialization -->
+    <script>
+        // Initialize ads after page load
+        window.addEventListener('load', function() {
+            // Push ads to AdSense
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        });
+    </script>
 </body>
 </html>
