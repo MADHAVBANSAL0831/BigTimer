@@ -834,6 +834,33 @@ body {
     }
 }
 
+/* Desktop/Laptop Screens - Override mobile fixes */
+@media (min-width: 769px) {
+    body {
+        position: static;
+        min-height: 100vh;
+        height: auto;
+        width: auto;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .app-container {
+        width: 100vw;
+        height: 100vh;
+        padding: 0.5rem;
+        position: relative;
+    }
+
+    .main-container {
+        width: calc(100vw - 2rem);
+        height: calc(100vh - 2rem);
+        max-width: none;
+        max-height: none;
+        padding: 2rem;
+    }
+}
+
 /* Header Layout */
 .header {
     display: flex;
