@@ -297,3 +297,26 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
+
+// Info Menu Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const infoBtn = document.getElementById('info-btn');
+    const infoDropdown = document.getElementById('info-dropdown');
+
+    if (infoBtn && infoDropdown) {
+        infoBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            infoDropdown.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function() {
+            infoDropdown.classList.remove('show');
+        });
+
+        // Prevent dropdown from closing when clicking inside it
+        infoDropdown.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+});

@@ -25,7 +25,7 @@
 <body>
     <div class="app-container">
         <!-- Top Banner Ad -->
-        <div class="ad-container top-ad" id="top-ad">
+        <div class="ad-container top-ad">
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-4525419879881614"
@@ -40,6 +40,16 @@
                 <div class="mode-switcher">
                     <button class="mode-btn active" data-mode="timer">Timer</button>
                     <button class="mode-btn" data-mode="stopwatch">Stopwatch</button>
+                </div>
+                <div class="info-menu">
+                    <button class="info-btn" id="info-btn">
+                        <i class="fas fa-info"></i>
+                    </button>
+                    <div class="info-dropdown" id="info-dropdown">
+                        <a href="privacy.html" target="_blank">Privacy Policy</a>
+                        <a href="terms.html" target="_blank">Terms of Service</a>
+                        <div class="copyright">© 2024 Big Timer</div>
+                    </div>
                 </div>
             </header>
 
@@ -115,15 +125,7 @@
             </div>
         </div>
 
-        <!-- Bottom Banner Ad -->
-        <div class="ad-container bottom-ad" id="bottom-ad">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-4525419879881614"
-                 data-ad-slot="9876543210"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-        </div>
+
 
             <!-- Notification -->
             <div class="notification" id="notification">
@@ -131,19 +133,21 @@
                 <span>Timer finished!</span>
             </div>
         </div>
+
+        <!-- Bottom Banner Ad -->
+        <div class="ad-container bottom-ad">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4525419879881614"
+                 data-ad-slot="9876543210"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2024 Big Timer. The best online timer and stopwatch for productivity.</p>
-            <nav class="footer-nav">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </div>
-    </footer>
+
+
+
 
     <script src="script.js"></script>
 
