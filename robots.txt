@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://bigtimer.app/sitemap.xml
+Sitemap: https://big-timer-gules.vercel.app/sitemap.xml
 
 # Crawl-delay (optional)
 Crawl-delay: 1
