@@ -42,6 +42,9 @@ class BigTimer {
 
         // Laps container
         this.lapsContainer = document.getElementById('laps-container');
+
+        // Fullscreen button
+        this.fullscreenBtn = document.getElementById('fullscreen-btn');
     }
 
     bindEvents() {
@@ -66,6 +69,15 @@ class BigTimer {
             input.addEventListener('input', () => this.validateInput(input));
             input.addEventListener('change', () => this.updateTimerFromInputs());
         });
+
+        // Fullscreen toggle
+        this.fullscreenBtn.addEventListener('click', () => this.toggleFullscreen());
+
+        // Listen for fullscreen changes to update button icon
+        document.addEventListener('fullscreenchange', () => this.updateFullscreenIcon());
+        document.addEventListener('webkitfullscreenchange', () => this.updateFullscreenIcon());
+        document.addEventListener('mozfullscreenchange', () => this.updateFullscreenIcon());
+        document.addEventListener('MSFullscreenChange', () => this.updateFullscreenIcon());
     }
 
     switchMode(mode) {
@@ -264,6 +276,55 @@ class BigTimer {
             oscillator.stop(audioContext.currentTime + 1);
         } catch (error) {
             console.log('Audio notification not supported');
+        }
+    }
+
+    toggleFullscreen() {
+        if (!document.fullscreenElement &&
+            !document.webkitFullscreenElement &&
+            !document.mozFullScreenElement &&
+            !document.msFullscreenElement) {
+            // Enter fullscreen
+            const element = document.documentElement;
+            if (element.requestFullscreen) {
+                element.requestFullscreen();
+            } else if (element.webkitRequestFullscreen) {
+                element.webkitRequestFullscreen();
+            } else if (element.mozRequestFullScreen) {
+                element.mozRequestFullScreen();
+            } else if (element.msRequestFullscreen) {
+                element.msRequestFullscreen();
+            }
+        } else {
+            // Exit fullscreen
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
+    }
+
+    updateFullscreenIcon() {
+        const isFullscreen = document.fullscreenElement ||
+                           document.webkitFullscreenElement ||
+                           document.mozFullScreenElement ||
+                           document.msFullscreenElement;
+
+        const svg = this.fullscreenBtn.querySelector('svg');
+
+        if (isFullscreen) {
+            // Exit fullscreen icon - arrows pointing inward
+            svg.innerHTML = '<path d="M15 9l6-6m0 6h-6V3"/><path d="M9 15l-6 6m6 0H3v-6"/>';
+            this.fullscreenBtn.title = 'Exit Fullscreen';
+        } else {
+            // Enter fullscreen icon - arrows pointing outward
+            svg.innerHTML = '<path d="M3 21l6-6m0 6H3v-6"/><path d="M21 3l-6 6m6 0V3h-6"/>';
+            this.fullscreenBtn.title = 'Toggle Fullscreen';
         }
     }
 }

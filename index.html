@@ -37,9 +37,17 @@
         <div class="main-container">
             <!-- Header -->
             <header class="header">
-                <div class="mode-switcher">
-                    <button class="mode-btn active" data-mode="timer">Timer</button>
-                    <button class="mode-btn" data-mode="stopwatch">Stopwatch</button>
+                <div class="header-left">
+                    <button class="fullscreen-btn" id="fullscreen-btn" title="Toggle Fullscreen">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 21l6-6m0 6H3v-6"/>
+                            <path d="M21 3l-6 6m6 0V3h-6"/>
+                        </svg>
+                    </button>
+                    <div class="mode-switcher">
+                        <button class="mode-btn active" data-mode="timer">Timer</button>
+                        <button class="mode-btn" data-mode="stopwatch">Stopwatch</button>
+                    </div>
                 </div>
                 <div class="info-menu">
                     <button class="info-btn" id="info-btn">
